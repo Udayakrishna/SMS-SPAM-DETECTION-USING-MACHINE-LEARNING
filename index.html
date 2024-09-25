@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+
+
+<html lang="">
+
+<head>
+<title>SMS SPAM-HAM DETECTION</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- Top Background Image Wrapper -->
+<div class="bgded overlay" style="background-image:url('{% static 'images/demo/backgrounds/6.webp' %}');height:950px;"> 
+  <!-- ################################################################################################ -->
+  <div class="wrapper row0">
+    <div id="topbar" class="hoc clear">
+      <div class="fl_left"> 
+        <!-- ################################################################################################ -->
+        
+        <!-- ################################################################################################ -->
+      </div>
+      <div class="fl_right"> 
+        <!-- ################################################################################################ -->
+        <ul class="nospace">
+         
+        </ul>
+        <!-- ################################################################################################ -->
+      </div>
+    </div>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear">
+      <div id="logo" class="fl_left"> 
+        <!-- ################################################################################################ -->
+        <h1><a href="home" style="font-family: sans-serif;">SMS SPAM DETECTION</a></h1>
+        <!-- ################################################################################################ -->
+      </div>
+      <nav id="mainav" class="fl_right"> 
+        <!-- ################################################################################################ -->
+        <ul class="clear">
+          <li class="active"><a href="home">Home</a></li>
+          <!-- <li><a class="drop" href="#">Pages</a>
+            <ul>
+              <li><a href="{% static 'pages/gallery.html' %}">Gallery</a></li>
+              <li><a href="{% static 'pages/full-width.html' %}">Full Width</a></li>
+              <li><a href="{% static 'pages/sidebar-left.html' %}">Sidebar Left</a></li>
+              <li><a href="{% static 'pages/sidebar-right.html' %}">Sidebar Right</a></li>
+              <li><a href="{% static 'pages/basic-grid.html' %}">Basic Grid</a></li>
+              <li><a href="{% static 'pages/font-icons.html' %}">Font Icons</a></li>
+            </ul>
+          </li>
+          <li><a class="drop" href="#">Dropdown</a>
+            <ul>
+              <li><a href="#">Level 2</a></li>
+              <li><a class="drop" href="#">Level 2 + Drop</a>
+                <ul>
+                  <li><a href="#">Level 3</a></li>
+                  <li><a href="#">Level 3</a></li>
+                  <li><a href="#">Level 3</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Level 2</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Link Text</a></li>
+          <li><a href="#">Link Text</a></li>
+          <li><a href="#">Link Text</a></li> -->
+        </ul>
+        <!-- ################################################################################################ -->
+      </nav>
+    </header>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div id="pageintro" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <article>
+      <h3 class="heading" style="font-family: sans-serif; font-weight: bolder;">SMS DETECTION</h3>
+      <p>The goal of this project is to build a spam filter by predicting whether an  message is spam (junk sms) or ham (good sms)</p>
+      <footer>
+     <form action='output' method="POST" enctype="multipart/form-data" class="login100-form validate-form">
+     {% csrf_token %}
+        <ul class="nospace inline pushright">
+          <li><input class="input100"  type="text" name="text" list="exampleList"  placeholder="Type Something" style='color: black; padding: 10px;border-radius :5px;border: none;margin: 20px;'>
+            <datalist id="exampleList">
+              <option value="U were outbid by simonwatson5120 on the Shinco DVD Plyr. 2 bid again, visit sms. ac/smsrewards 2 end bid notifications, reply END OUT"></option>
+              <option value="December only! Had your mobile 11mths+? You are entitled to update to the latest colour camera mobile for Free! Call The Mobile Update Co FREE on 08002986906"></option>
+              <option value="I dont thnk its a wrong calling between us"></option>
+              <option value="YOUR CHANCE TO BE ON A REALITY FANTASY SHOW call now = 08707509020 Just 20p per min NTT Ltd, PO Box 1327 Croydon CR9 5WB 0870 is a national = rate call"></option>
+              <option value="Double mins and txts 4 6months FREE Bluetooth on Orange. Available on Sony, Nokia Motorola phones. Call MobileUpd8 on 08000839402 or call2optout/N9DX"></option>
+              <option value="This is the 2nd attempt to contract U, you have won this weeks top prize of either Ã¥Â£1000 cash or Ã¥Â£200 prize. Just call 09066361921"></option>
+              <option value="My sister going to earn more than me da."></option>
+              <option value="Quite late lar... Ard 12 anyway i wun b drivin..."></option>
+              <option value="URGENT! Your Mobile number has been awarded with a Ã¥Â£2000 prize GUARANTEED. Call 09061790121 from land line. Claim 3030. Valid 12hrs only 150ppm"></option>
+              <option value="Tell your friends what you plan to do on Valentines day @ &lt;URL&gt;"></option>
+              <option value="Cashbin.co.uk (Get lots of cash this weekend!) www.cashbin.co.uk Dear Welcome to the weekend We have got our biggest and best EVER cash give away!! These.."></option>
+              <option value="I hope you arnt pissed off but id would really like to see you tomorrow. Love me xxxxxxxxxxxxxX"></option>
+              <option value="Thk shld b can... Ya, i wana go 4 lessons... Haha, can go for one whole stretch..."></option>
+              <option value="BangBabes Ur order is on the way. U SHOULD receive a Service Msg 2 download UR content. If U do not, GoTo wap. bangb. tv on UR mobile internet/service menu"></option>
+              <option value="I remain unconvinced that this isn't an elaborate test of my willpower"></option>
+            </datalist>
+
+          <span class="label-input100"> Text </span>
+          <select class="input100" type = 'text' name="algo" style='color:black ; padding: 10px;border-radius :5px;border: none; margin: 20px;'>
+          
+          <option value='rf'>Random Forest</option>
+          <option value='svm'>SGD</option>
+          <option value='lstm'>LSTM</option>
+          </select>
+          <span class="label-input100">Algorithm</span>
+
+          
+          <li><button type="submit"  class="login100-form-btn" style="color: black; padding: 10px 20px; border-radius :5px;border: none;"> Predict </button></li>
+        </ul>
+        </form>
+      </footer>
+    </article>
+    <!-- ################################################################################################ -->
+  </div>
+  <!-- ################################################################################################ -->
+</div>
+<!-- End Top Background Image Wrapper -->
+
+<!-- ################################################################################################ -->
+
+
+
+
+<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="{% static 'layout/scripts/jquery.min.js' %}"></script>
+<script src="{% static 'layout/scripts/jquery.backtotop.js' %}"></script>
+<script src="{% static 'layout/scripts/jquery.mobilemenu.js' %}"></script>
+</body>
+</html>
